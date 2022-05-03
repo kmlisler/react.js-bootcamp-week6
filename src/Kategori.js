@@ -10,9 +10,9 @@ class Kategori extends Component {
   }
 
   kategoriGetir(){
-	  fetch("http://localhost:3000/categories")
+	  fetch("http://localhost:8000/categories")
 	  .then(rsponse => rsponse.json())
-	  .then(data => console.log(data))
+	  .then(data => this.setState({kategoriler:data}))
 
   }
   componentDidMount(){

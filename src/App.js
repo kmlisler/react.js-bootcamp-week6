@@ -11,7 +11,7 @@ class App extends Component {
   };
 
   urunGetir(){
-	  fetch("http://localhost:3000/products")
+	  fetch("http://localhost:8000/products")
 	  .then(rsponse => rsponse.json())
 	  .then(data => this.setState({urunler:data}))
 
