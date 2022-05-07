@@ -5,7 +5,7 @@ import {
 } from "reactstrap";
 
 class UrunListesi extends Component {
- 
+
   render() {
     return (
       <div>
@@ -29,7 +29,7 @@ class UrunListesi extends Component {
                 <td>{urun.unitPrice}</td>
                 <td>{urun.unitsInStock}</td>
                 <td>{urun.quantityPerUnit}</td>
-                <td><Button onClick={() => this.sepetEkle(urun)} color="primary"> Ekle </Button></td>
+                <td><Button onClick={() => this.props.sepetEkle(urun)} color="primary"> Ekle </Button></td>
               </tr>
             ))}
           </tbody>

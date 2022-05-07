@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import {
-  
-	DropdownToggle,Navbar,NavbarBrand,NavbarToggler,Collapse,Nav,NavItem,NavLink,DropdownMenu,UncontrolledDropdown
-	,NavbarText,DropdownItem
-  } from "reactstrap";
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  Collapse,
+  Nav,
+  NavItem,
+  NavLink,
+  NavbarText,
+} from "reactstrap";
+import SepetOzeti from "./SepetOzeti";
 class Navigate extends Component {
   render() {
     return (
@@ -22,17 +28,7 @@ class Navigate extends Component {
                     GitHub
                   </NavLink>
                 </NavItem>
-                <UncontrolledDropdown inNavbar nav>
-                  <DropdownToggle caret nav>
-                    Options
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>Option 1</DropdownItem>
-                    <DropdownItem>Option 2</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Reset</DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
+                <SepetOzeti sepettenCikar = {this.props.sepettenCikar} sepet={this.props.sepet} />
               </Nav>
               <NavbarText>Simple Text</NavbarText>
             </Collapse>
