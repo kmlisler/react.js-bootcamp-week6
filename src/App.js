@@ -65,7 +65,7 @@ class App extends Component {
                 bilgiUrunListesi={bilgiUrunListesi}
               />
             } />
-            <Route path="sepet" sepet={this.state.sepet} sepettenCikar={this.sepettenCikar}  element={<SepetList/>} />
+            <Route path="sepet"   element={<SepetList sepet={this.state.sepet} sepettenCikar={this.sepettenCikar}/>} />
             <Route path="/*" element={<NotFound/>} />
 
             </Routes>
