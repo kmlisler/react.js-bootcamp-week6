@@ -6,6 +6,7 @@ import {
   DropdownItem,
   Badge,
 } from "reactstrap";
+import {Link} from "react-router-dom";
 
 export default class SepetOzeti extends Component {
   sepetOzeti() {
@@ -30,7 +31,9 @@ export default class SepetOzeti extends Component {
             ))}
 
             <DropdownItem divider />
-            <DropdownItem>Reset</DropdownItem>
+            <DropdownItem>
+              <Link to="sepet"> Sepete Git </Link>
+            </DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown>
       </div>

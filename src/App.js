@@ -4,7 +4,9 @@ import Kategori from "./Kategori";
 import UrunListesi from "./UrunListesi";
 import { Container, Row, Col } from "reactstrap";
 import alertify from "alertifyjs";
-
+import NotFound from "./NotFound";
+import SepetList from "./SepetList";
+import {Route,Routes} from 'react-router-dom';
 class App extends Component {
   state = { seciliKategori: "", urunler: [], sepet: [] };
   kategoriDegistir = (kategori) => {
@@ -46,20 +48,28 @@ class App extends Component {
             <Navigate sepettenCikar={this.sepettenCikar} sepet={this.state.sepet} />
           </Row>
           <Row>
-            <Col xs="5">
+            <Col xs="3">
               <Kategori
                 seciliKategori={this.state.seciliKategori}
                 kategoriDegistir={this.kategoriDegistir}
                 bilgiKategori={bilgiKategori}
               />
             </Col>
-            <Col xs="7">
+            <Col xs="9">
+            <Routes>
+            <Route path="/" element={
               <UrunListesi
                 sepetEkle={this.sepetEkle}
                 urunler={this.state.urunler}
                 seciliKategori={this.state.seciliKategori}
                 bilgiUrunListesi={bilgiUrunListesi}
               />
+            } />
+            <Route path="sepet" sepet={this.state.sepet} sepettenCikar={this.sepettenCikar}  element={<SepetList/>} />
+            <Route path="/*" element={<NotFound/>} />
+
+            </Routes>
+              
             </Col>
           </Row>
         </Container>
