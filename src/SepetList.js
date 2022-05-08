@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table } from "reactstrap";
+import { Table,Button } from "reactstrap";
 
 export default class SepetList extends Component {
   sepetContent() {
@@ -25,6 +25,7 @@ export default class SepetList extends Component {
               <td>{sepetItem.urun.unitPrice}</td>
               <td>{sepetItem.urun.unitsInStock}</td>
               <td>{sepetItem.quantity}</td>
+              <Button color="danger" onClick={() => this.props.sepettenCikar(sepetItem.urun)}>Sil</Button>
             </tr>
           ))}
         </tbody>

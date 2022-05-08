@@ -7,6 +7,7 @@ import alertify from "alertifyjs";
 import NotFound from "./NotFound";
 import SepetList from "./SepetList";
 import {Route,Routes} from 'react-router-dom';
+import FormDemo from "./FormDemo";
 class App extends Component {
   state = { seciliKategori: "", urunler: [], sepet: [] };
   kategoriDegistir = (kategori) => {
@@ -66,6 +67,7 @@ class App extends Component {
               />
             } />
             <Route path="sepet"   element={<SepetList sepet={this.state.sepet} sepettenCikar={this.sepettenCikar}/>} />
+            <Route path="form"  element={<FormDemo/>} />
             <Route path="/*" element={<NotFound/>} />
 
             </Routes>

@@ -10,6 +10,7 @@ import {
   NavbarText,
 } from "reactstrap";
 import SepetOzeti from "./SepetOzeti";
+import {Link} from "react-router-dom";
 class Navigate extends Component {
   render() {
     return (
@@ -21,14 +22,19 @@ class Navigate extends Component {
             <Collapse navbar>
               <Nav className="me-auto" navbar>
                 <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
+                  <NavLink>
+                    <Link to="/form">Form</Link>
+                  </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="https://github.com/reactstrap/reactstrap">
                     GitHub
                   </NavLink>
                 </NavItem>
-                <SepetOzeti sepettenCikar = {this.props.sepettenCikar} sepet={this.props.sepet} />
+                <SepetOzeti
+                  sepettenCikar={this.props.sepettenCikar}
+                  sepet={this.props.sepet}
+                />
               </Nav>
               <NavbarText>Simple Text</NavbarText>
             </Collapse>
